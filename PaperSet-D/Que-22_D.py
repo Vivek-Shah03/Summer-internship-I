@@ -1,0 +1,1 @@
+print(f"Divisor: {(5/2).__floor__()}, Reminder: {5%2}")
