@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_library_managment,access_library_managment,model_library_managment,,1,1,1,1
+access_library_managment,access_prime_membership,model_prime_membership,,1,1,1,1
+access_library_managment,access_borrow_book,model_borrow_book,,1,1,1,1
+access_library_managment,access_book_data,model_book_data,,1,1,1,1
+access_library_managment,access_book_data,model_books_list,,1,1,1,1
+library.access_books_list,access_books_list,library.model_books_list,base.group_user,1,1,1,1
+access_library_managment,access_library_managment,model_receptionist_data,,1,1,1,1
+library.access_return_book,access_return_book,library.model_return_book,base.group_user,1,1,1,1

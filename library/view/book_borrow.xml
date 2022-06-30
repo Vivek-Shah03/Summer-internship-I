@@ -1,0 +1,55 @@
+<odoo>
+    <record id="borrow_book_view" model="ir.ui.view">
+        <field name="name">Borrow Book View</field>
+        <field name="model">borrow.book</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="members"/>
+                    <field name="borrowing_date" placeholder="Date of borrowing" readonly="True"/>
+                    <field name="last_day" placeholder="Last Day To Return" readonly="True"/>
+                    <field name="receptionist"/>
+                    <field name="books">
+                        <tree>
+                            <field name="books_data"/>
+                        </tree>
+                        <form>
+                            <group>
+                                <field name="books_data"/>
+                            </group>
+                        </form>
+                    </field>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="borrow_book_tree_view" model="ir.ui.view">
+        <field name="name">Borrow Book Tree View</field>
+        <field name="model">borrow.book</field>
+        <field name="arch" type="xml">
+            <tree>
+                    <field name="members"/>
+                    <field name="borrowing_date" placeholder="Date of borrowing" readonly="True"/>
+                    <field name="last_day" placeholder="Last Day To Return" readonly="True"/>
+                    <field name="receptionist"/>
+                    <field name="books">
+                        <tree>
+                            <field name="books_data"/>
+                        </tree>
+                        <form>
+                            <group>
+                                <field name="books_data"/>
+                            </group>
+                        </form>
+                    </field>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_borrow_book" model="ir.actions.act_window">
+        <field name="name">Borrow Book</field>
+        <field name="res_model">borrow.book</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

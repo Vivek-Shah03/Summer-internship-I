@@ -1,0 +1,42 @@
+<odoo>
+    <menuitem id="library_parent_menu"
+              name="Library"
+              sequence="1"
+    />
+
+    <menuitem id="library_sub_menu"
+              name="Library Registration"
+              parent="library_parent_menu"
+              action="library.action_library_managment"
+              sequence="1"
+    />
+
+    <menuitem id="library_sub_menu_2"
+              name="Prime Membership"
+              parent="library_parent_menu"
+              action="library.action_prime_view"
+              sequence="2"
+    />
+
+    <menuitem id="library_sub_menu_3"
+              name="Borrow Book"
+              parent="library_parent_menu"
+              action="library.action_borrow_book"
+              sequence="3"
+    />
+
+    <menuitem id="library_sub_menu_4"
+              name="Book Data"
+              parent="library_parent_menu"
+              action="library.action_book_data"
+              sequence="4"
+    />
+
+    <menuitem id="library_sub_menu_5"
+              name="Return Book"
+              parent="library_parent_menu"
+              action="library.action_return_book"
+              sequence="5"
+    />
+
+</odoo>

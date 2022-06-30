@@ -1,0 +1,40 @@
+<odoo>
+    <record id="prime_membership_view" model="ir.ui.view">
+        <field name="name">Prime Membership View</field>
+        <field name="model">prime.membership</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="member"/>
+                    <field name="phone"/>
+                    <field name="address"/>
+                    <field name="payment_done"/>
+                    <field name="is_prime_member"/>
+                    <field name="receptionist"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="prime_membership_tree_view" model="ir.ui.view">
+        <field name="name">Prime Membership tree view</field>
+        <field name="model">prime.membership</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="member"/>
+                <field name="phone"/>
+                <field name="address"/>
+                <field name="payment_done"/>
+                <field name="is_prime_member"/>
+                <field name="receptionist"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_prime_view" model="ir.actions.act_window">
+        <field name="name">Prime Membership</field>
+        <field name="res_model">prime.membership</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

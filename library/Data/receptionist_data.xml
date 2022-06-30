@@ -1,0 +1,8 @@
+<odoo>
+    <record id="rec_01" model="receptionist.data">
+        <field name="receptionist">Mr.Shah</field>
+    </record>
+    <record id="rec_02" model="receptionist.data">
+        <field name="receptionist">Mr.Patel</field>
+    </record>
+</odoo>

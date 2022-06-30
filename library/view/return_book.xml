@@ -1,0 +1,46 @@
+<odoo>
+    <record id="return_book_view" model="ir.ui.view">
+        <field name="name">Return Book View</field>
+        <field name="model">return.book</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="returned_books" widget="many2many_tags">
+                        <form>
+                            <field name="books"/>
+                            <field name="borrowing_date"/>
+                            <field name="last_day"/>
+                        </form>
+                        <tree>
+                            <field name="books"/>
+                            <field name="borrowing_date"/>
+                            <field name="last_day"/>
+                        </tree>
+                    </field>
+                    <field name="is_returned"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="return_book_tree_view" model="ir.ui.view">
+        <field name="name">Return Book Tree View</field>
+        <field name="model">return.book</field>
+        <field name="arch" type="xml">
+            <tree>
+                    <field name="returned_books" widget="many2many_tags">
+                        <form>
+                            <field name="members"/>
+                        </form>
+                    </field>
+                    <field name="is_returned"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_return_book" model="ir.actions.act_window">
+        <field name="name">Return Book</field>
+        <field name="res_model">return.book</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

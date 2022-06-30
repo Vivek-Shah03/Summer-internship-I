@@ -1,0 +1,118 @@
+<odoo>
+    <record id="library_form_view" model="ir.ui.view">
+        <field name="name">Library form view</field>
+        <field name="model">library.managment</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <header>
+                        <button name="action_cancel" string="Cancel" type="object"
+                            class="oe_highlight" attrs="{'invisible':[('status','in',['submit','cancel'])]}"/>
+                        <button name="submit_action" string="Submit" type="object"
+                                    class="oe_highlight" attrs="{'invisible':[('status','in',['submit','cancel'])]}"/>
+                        <button name="draft_action" string="Set to draft" type="object"
+                                    class="oe_highlight" attrs="{'invisible':[('status','in',['submit','draft'])]}"/>
+                        <field name="status" widget="statusbar"/>
+                    </header>
+
+                <group>
+                    <group>
+                    <field name="name" placeholder="Enter Name"/>
+                    <field name="phone" placeholder="Enter Phone NO."/>
+                    <field name="address" placeholder="Enter Address"/>
+                    <field name="receptionist"/>
+                    <field name="desc"/>
+                    </group>
+                    <group>
+                        <field name="photo" widget="image"/>
+                    </group>
+                </group>
+                    <button name="%(library.action_prime_view)d" type="action" class="oe_highlight" string="Prime Registration"/>
+                </sheet>
+            </form>
+                </field>
+    </record>
+
+    <record id="library_tree_view" model="ir.ui.view">
+        <field name="name">Library tree view</field>
+        <field name="model">library.managment</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="phone"/>
+                <field name="address"/>
+                <field name="receptionist"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="library_search_view" model="ir.ui.view">
+        <field name="name">Library Search View</field>
+        <field name="model">library.managment</field>
+        <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="address"/>
+                    <field name="receptionist"/>
+                </search>
+        </field>
+    </record>
+
+    <record id="library_graph_view" model="ir.ui.view">
+        <field name="name">Library Graph View</field>
+        <field name="model">library.managment</field>
+        <field name="arch" type="xml">
+            <graph>
+                <field name="address" type="col"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="library_calendar_view" model="ir.ui.view">
+        <field name="name">Library Calendar View</field>
+        <field name="model">library.managment</field>
+        <field name="arch" type="xml">
+            <calendar date_start="create_date">
+                <field name="name"/>
+            </calendar>
+        </field>
+    </record>
+
+    <record id="library_kanban_view" model="ir.ui.view">
+        <field name="name">Library kanban View</field>
+        <field name="model">library.managment</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="name"/>
+                <field name="phone"/>
+                <field name="address"/>
+                <field name="id"/>
+                <field name="receptionist"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+
+                            <div class="oe_kanban_details d-flex flex-column">
+                                <strong>
+                                    <field name="name"/>
+                                </strong>
+                                <ul>
+                                    <li>Phone:-
+                                        <field name="phone"/>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="action_library_managment" model="ir.actions.act_window">
+        <field name="name">Library Managment</field>
+        <field name="res_model">library.managment</field>
+        <field name="view_mode">tree,form,kanban,search,calendar</field>
+    </record>
+</odoo>
